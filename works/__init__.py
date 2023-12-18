@@ -4,6 +4,4 @@ from .third import work as third_work
 from .fourth import work as fourth_work
 
 works = [first_work,
-         second_work,
-         third_work,
-         fourth_work]
+         second_work]
