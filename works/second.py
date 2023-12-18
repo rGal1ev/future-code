@@ -1,101 +1,155 @@
 first = """
 # 1
-a = int(input("Введите длину ребра a: "))
-b = int(input("Введите длину ребра b: "))
-c = int(input("Введите длину ребра c: "))
+sum_ = 0
+for _ in range(10):
+    num = int(input("Введите число: "))
+    sum_ += num
 
-V = a * b * c
-S = 2 * (a * b + b * c + a * c)
-
-print("Объем параллелепипеда:", V)
-print("Площадь поверхности параллелепипеда:", S)
+print("Сумма чисел:", sum_)
 """
 
 second = """
 # 2
-a = float(input("Введите число a: "))
-b = float(input("Введите число b: "))
+words = []
 
-average = (a + b) / 2
+for i in range(6):
+    word = input("Введите слово: ")
+    words.append(word)
 
-print("Среднее арифметическое чисел равно", average)
+reversed_words = words[::-1]
+print("Слова в обратном порядке: ", reversed_words)
 """
 
 third = """
 # 3
-a = 5
-b = 10
-result = a * b
+numbers = []
 
-print('Произведение равно:', result)
+for i in range(5):
+    number = int(input("Введите число: "))
+    numbers.append(number)
+
+print("Наименьшее число:", min(numbers))
 """
 
 fourth = """
 # 4
-r = float(input("Введите радиус: "))
-L = 2 * 3.14 * r
-print("Длина окружности равна", L)
+numbers = []
+
+for i in range(5):
+    number = int(input("Введите число: "))
+    numbers.append(number)
+
+print("Четные числа:")
+for number in numbers:
+    if number % 2 == 0:
+        print(number)
 """
 
 fifth = """
 # 5
-a = float(input("Введите длину ребра: "))
-s1 = a * a
-s2 = 6 * a * a
-v = a ** 3
+numbers = []
+result = 1
 
-print("Площадь грани: ", s1)
-print("Площадь полной поверхности: ", s2)
-print("Объем куба: ", v)
+for i in range(5):
+    number = int(input("Введите число: "))
+    numbers.append(number)
+
+for i in range(len(numbers)):
+    result *= numbers[i]
+
+print("Произведение:", result)
 """
 
 sixth = """
 # 6
-n = int(input("Введите количество порций мороженного: "))
-k = int(input("Введите количество плиток шоколада: "))
+words = []
 
-price_ice_cream = 1200
-price_chocolate = 3800
+for i in range(5):
+    word = input("Введите слово: ")
+    words.append(word)
 
-total_spent = n * price_ice_cream + k * price_chocolate
-print("Мальчик потратил:", total_spent, "руб.")
+words.sort()
+
+print("Слова в алфавитном порядке:")
+for word in words:
+    print(word)
 """
 
 seventh = """
 # 7
-a = float(input("Введите a: "))
-b = float(input("Введите b: "))
-c = float(input("Введите c: "))
+numbers = []
 
-h = (c ** 2 - ((a - b) / 2) ** 2) ** 0.5
-S = (a + b) * h / 2
+for i in range(5):
+    number = int(input("Введите число: "))
+    numbers.append(number)
 
-print("Площадь трапеции:", S)
+max_number = numbers[0]
+
+for number in numbers:
+    if number > max_number:
+        max_number = number
+
+print("Наибольший элемент:", max_number)
 """
 
 eighth = """
 # 8
-speed_motorcycle = 60
-speed_bicycle = 15
-time = 2
+lst = input("Введите элементы списка через пробел: ").split()
 
-distance = (speed_motorcycle + speed_bicycle) * time
-print("Расстояние от города до поселка:", distance, "км")
+if len(lst) > 0:
+    lst[0], lst[-1] = lst[-1], lst[0]
+
+print(lst)
 """
 
 ninth = """
 # 9
-money_per_week = 900 / (2 + 4)  # Расчет зарплаты за одну неделю
-money1 = money_per_week * 2  # Расчет заработка первого рабочего
-money2 = money_per_week * 4  # Расчет заработка второго рабочего
+import random
 
-print("Первый рабочий заработал", money1, "рублей")
-print("Второй рабочий заработал", money2, "рублей")
+numbers = random.sample(range(-10, 10), 10)
+max_abs = 0
+
+for num in numbers:
+    if abs(num) > max_abs:
+        max_abs = abs(num)
+
+print("Максимальное по модулю число в списке:", max_abs)
+print(numbers)
+"""
+
+tenth = """
+# 10
+import random
+
+numbers = random.sample(range(-10, 10), 10)
+
+sum_ = 0
+count = 0
+
+for num in numbers:
+    if num > 0:
+        sum_ += num
+        count += 1
+
+if count > 0:
+    average = sum_ / count
+    print("Среднее арифметическое положительных элементов:", average)
+else:
+    print("В списке нет положительных элементов.")
 """
 
 work = {
     "id": 2,
     "name": "2️⃣ Самостоятельная работа",
-    "task_count": 5,
-    "tasks": [first, second, third, fourth, fifth]
+    "task_count": 7,
+    "tasks": [first,
+              second,
+              third,
+              fourth,
+              fifth,
+              sixth,
+              seventh,
+              eighth,
+              ninth,
+              tenth]
 }
